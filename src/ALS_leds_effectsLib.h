@@ -1,0 +1,5 @@
+	#include "ALS_leds_effectsMod.h"
+	#include "ALS_leds_effectsString.h"
+	#include "ALS_leds_effects.h"
+	#include "ALS_leds_effectsFnc.h"
+	#include "palettes.h"
