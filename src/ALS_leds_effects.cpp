@@ -1,4 +1,6 @@
 #include "ALS_leds_effects.h"
+#include "ALS_leds_effectsString.h"
+#include "palettes.h"
 
 #include <adri_tools.h>
 
@@ -39,6 +41,7 @@ namespace  {
     const char PROGMEM chooseEffect_rainbow_smoke       [] = "ArcEnCiel_fumee";
 
     const char PROGMEM chooseEffect_fire                [] = "Fire";
+    const char PROGMEM chooseEffect_fireVert            [] = "Fire_Vertical";
 
 #ifdef LAMP_TORCH
     const char PROGMEM chooseEffect_torch               [] = "Torch";
@@ -98,6 +101,10 @@ namespace  {
     const char PROGMEM chooseEffect_cw                  [] = "colorWipe";
     const char PROGMEM chooseEffect_colorpalette        [] = "ColorPalette";
     const char PROGMEM chooseEffect_color               [] = "Color";
+
+
+    const char PROGMEM chooseEffect_diago_colorWave     [] = "diagoColorWave";
+    const char PROGMEM chooseEffect_diago_colorPalette  [] = "diagoColoPalette";
 
 
 
@@ -220,6 +227,10 @@ void effect_manager::activateEffect(int8_t index){
     effect->setup();
 
     effect->loadSettingFromFile("/effectsSetting/");
+
+    // String str;
+    // effect->settingGetValueByKey(settingEffectKey_paletteMod, str) ;
+    // PALETTE_MODS mod = are_paletteModFromString(str.toInt()); 
 
     // String out;
     // lampSettingInstance()->_effect->effect_json(out);
@@ -404,6 +415,15 @@ effect_manager * effect_manager_instance() {
     return effect_managerPtr;
 }
 
+// int command_general_paletteNext(String value){
+//     effect_id * eff = effectIdInstance();
+//     String str;
+//     eff->settingGetValueByKey(settingEffectKey_paletteMod, str) ;
+//     PALETTE_MODS mod = are_paletteModFromString(str.toInt());
+//     if (value!="")  RGBeffecPalette_ptr_get()->myPalette_next(mod,false);
+//     else            RGBeffecPalette_ptr_get()->myPalette_prev(mod,false);
+//     // fsprintf("\n[command_general_paletteNext] [%s]\n",str.c_str());
+// }
 
 void effect_manager_sav(int pos){
 
@@ -420,6 +440,15 @@ void effect_manager_sav(int pos){
         JsonObject  root    = buffer.to<JsonObject>();
         JsonObject object   = root.createNestedObject(effectId_array[pos]->_name);
         effectId_array[pos]->savSetting(object);
+
+        String str;
+        effectId_array[pos]->settingGetValueByKey(settingEffectKey_paletteMod, str) ;
+        PALETTE_MODS mod = are_paletteModFromString(str.toInt()); 
+        int value = RGBeffecPalette_ptr_get()->myPalette_getPos(mod);
+        String name = ch_toString(settingEffectKey_paletteIndex);
+        object[name] = value;
+       
+
         serializeJson(buffer, file);
         #ifdef DEBUG
             serializeJson(buffer, Serial);

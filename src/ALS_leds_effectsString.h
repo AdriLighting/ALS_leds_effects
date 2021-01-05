@@ -18,6 +18,7 @@
 	extern const char PROGMEM settingEffectKey_paletteDelay			[];
 	extern const char PROGMEM settingEffectKey_paletteTowardDelay	[];
 	extern const char PROGMEM settingEffectKey_paletteTowardIncr	[];
+	extern const char PROGMEM settingEffectKey_paletteIndex			[];
 // ####################################################################################
 	extern const char PROGMEM settingEffectKey_reverse 			[];
 	extern const char PROGMEM settingEffectKey_reverseTimer 	[];

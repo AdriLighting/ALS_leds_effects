@@ -34,6 +34,7 @@
     extern const char PROGMEM chooseEffect_rainbow_MatrixV     [];
     extern const char PROGMEM chooseEffect_rainbow_smoke       [];
     extern const char PROGMEM chooseEffect_fire                [];
+    extern const char PROGMEM chooseEffect_fireVert				[];
 
 #ifdef LAMP_TORCH
     extern const char PROGMEM chooseEffect_torch               [];
@@ -93,6 +94,10 @@
     extern const char PROGMEM chooseEffect_cw                  [];
     extern const char PROGMEM chooseEffect_colorpalette        [];
     extern const char PROGMEM chooseEffect_color               [];
+
+    extern const char PROGMEM chooseEffect_diago_colorWave     [];
+    extern const char PROGMEM chooseEffect_diago_colorPalette  [];
+
 
 	struct chooseEffectList {
 		const char 	* name;

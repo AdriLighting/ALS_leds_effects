@@ -13,6 +13,7 @@
 #endif
 
 
+
 int 			clPalettes_position = 0;
 String 			cpFromSPIFF[18];
 int 			cpFromSPIFFcount;

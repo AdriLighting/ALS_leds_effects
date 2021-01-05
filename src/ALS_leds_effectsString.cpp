@@ -15,6 +15,7 @@
 	const char PROGMEM settingEffectKey_paletteDelay			[] = "paletteDelay";
 	const char PROGMEM settingEffectKey_paletteTowardDelay		[] = "paletteTowardDelay";
 	const char PROGMEM settingEffectKey_paletteTowardIncr		[] = "paletteTowardIncr";
+	const char PROGMEM settingEffectKey_paletteIndex			[] = "paletteIndex";
 // ####################################################################################
 	const char PROGMEM settingEffectKey_reverse 		[] = "reverse";
 	const char PROGMEM settingEffectKey_reverseTimer 	[] = "reverse_timer";
@@ -132,6 +133,7 @@ boolean effectSetting_create_tw();
 	{settingEffectKey_isTw, 					esrm_full, 		"er", 	effectSetting_create_er, 			NULL, 0},
 	{settingEffectKey_cRgb_cp, 					esrm_multiple,	"er", 	effectSetting_create_er, 			rrl_r1, 4},
 	{settingEffectKey_rep, 						esrm_value, 	"es", 	effectSetting_create_default,		NULL, 0},
+	{settingEffectKey_paletteIndex,				esrm_value, 	"ep", 	effectSetting_create_ep, 			NULL, 0},
 
 
 };
