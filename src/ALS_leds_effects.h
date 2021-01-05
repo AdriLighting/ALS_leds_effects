@@ -98,6 +98,9 @@
     extern const char PROGMEM chooseEffect_diago_colorWave     [];
     extern const char PROGMEM chooseEffect_diago_colorPalette  [];
 
+    extern const char PROGMEM chooseEffect_tower_h1  [];
+    extern const char PROGMEM chooseEffect_tower_h2  [];
+    extern const char PROGMEM chooseEffect_tower_h3  [];
 
 	struct chooseEffectList {
 		const char 	* name;

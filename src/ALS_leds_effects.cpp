@@ -106,6 +106,10 @@ namespace  {
     const char PROGMEM chooseEffect_diago_colorWave     [] = "diagoColorWave";
     const char PROGMEM chooseEffect_diago_colorPalette  [] = "diagoColoPalette";
 
+    const char PROGMEM chooseEffect_tower_h1  [] = "tower_h1";
+    const char PROGMEM chooseEffect_tower_h2  [] = "tower_h2";
+    const char PROGMEM chooseEffect_tower_h3  [] = "tower_h3";
+
 
 
 
