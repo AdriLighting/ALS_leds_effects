@@ -56,7 +56,7 @@ String firePaletteGetName(int pos){
 
 CRGBPalette16 firePaletteCreate(String pName){
 	String path = "/sfp/" + pName + ".txt";
-	File file = SPIFFS.open(path, "r");
+	File file = LittleFS.open(path, "r");
 	if(file){
 		// fsprintf("[firePaletteObject] File read success : %s\n", path.c_str());
 		CRGBPalette16 spiffPalette;
@@ -83,7 +83,7 @@ String firePaletteFromSPIFF(String path) {
 
 	String s,t;
 
-	Dir dir = SPIFFS.openDir(path);
+	Dir dir = LittleFS.openDir(path);
 
 	int i=0;
 

@@ -36,7 +36,7 @@ String classiquePaletteGetName(int pos){
 
 String classiquePaletteFromSPIFF(String path) { 
 	 String s,t;
-	 Dir dir = SPIFFS.openDir(path);
+	 Dir dir = LittleFS.openDir(path);
 	 int i=0;
 	 while (dir.next()) {
 
@@ -58,7 +58,7 @@ String classiquePaletteFromSPIFF(String path) {
 
 CRGBPalette16 classiquePaletteCreate(String pName, boolean debug){
 	 String path = "/scp/" + pName + ".txt";
-	 File file = SPIFFS.open(path, "r");
+	 File file = LittleFS.open(path, "r");
 	 if(file){
 	 		#ifdef DEBUG
 				if (debug) fsprintf("[classiquePaletteCreate] File read succes : %s\n", path.c_str());

@@ -240,7 +240,7 @@ void effect_manager::activateEffect(int8_t index){
     // lampSettingInstance()->_effect->effect_json(out);
     // String namePos = String(effect->_namePos);
     // bool rFile = true;
-    // File file = SPIFFS.open("/effectsSetting/"+namePos+".json", "r");
+    // File file = LittleFS.open("/effectsSetting/"+namePos+".json", "r");
     // if (file) rFile = false;
     // else file.close();
     // fsprintf("\n[test]\nfile:%d\njson:\n\t%s\n",rFile,out.c_str());
@@ -431,7 +431,7 @@ effect_manager * effect_manager_instance() {
 
 void effect_manager_sav(int pos){
 
-    File file = SPIFFS.open("/effectsSetting/"+String(effectId_array[pos]->_namePos)+".json", "w");
+    File file = LittleFS.open("/effectsSetting/"+String(effectId_array[pos]->_namePos)+".json", "w");
             #ifdef DEBUG
                 fsprintf("\n[effect_manager_sav]\n");
                 fsprintf("\tfilename: %s\n", effectId_array[pos]->_name.c_str());
